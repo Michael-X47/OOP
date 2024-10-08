@@ -19,8 +19,7 @@ class HardwareHandler:
                       hardware.get_product_description())
             my_cursor = my_connection.cursor()
             my_cursor.execute(sql_statement, values)
-            # ----- Again steps for hardware tabel --------
-            v_last_product_id = my_cursor.lastrowid  # lastrowid to get the last parameter he put it
+            v_last_product_id = my_cursor.lastrowid  
             sql_statement2 = ("insert into hardware"
                               " (HARDWARE_WARRANTY_PRD, PRODUCT_ID)"
                               " values"
@@ -49,7 +48,6 @@ class HardwareHandler:
                       hardware.get_product_description(), hardware.get_product_id())
             my_cursor = my_connection.cursor()
             my_cursor.execute(sql_statement, values)
-            # ------- software table --------
             sql_statement2 = ("update hardware "
                               " set HARDWARE_WARRANTY_PRD = %s"
                               " where product_id = %s")
