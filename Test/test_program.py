@@ -46,9 +46,4 @@ order1000.add_product_to_cart(my_magazine)
 order1000.add_product_quantity_to_cart(my_office, 5)
 # preview receipt
 order1000.preview_order_receipt()
-# HW
-"""
-order1001.add_product_qty_to_cart(my_printer, 4)  # add 4 units
-order1001.remove_product_from_cart(my_keyboard)  # remove 1 unit
-order1001.remove_product_from_cart(my_printer, 3)  # remove 3 units
-"""
+
