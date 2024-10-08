@@ -2,7 +2,6 @@ from Customers.company import Company
 from Orders.order import Order
 from Products.hardware import Hardware
 from Products.manual import Manual
-from Products.software import Software
 
 # create products objects
 my_keyboard = Hardware(1, 100, "Keyboard asus", 250
