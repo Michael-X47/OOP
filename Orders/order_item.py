@@ -5,10 +5,10 @@ class OrderItem:
     __static_line_number = 1
 
     def __init__(self, product, quantity):
-        self.__line_nbr = OrderItem.__static_line_number  # int
+        self.__line_nbr = OrderItem.__static_line_number  
         OrderItem.__static_line_number = OrderItem.__static_line_number + 1
-        self.__product = product  # object from product class
-        self.__quantity = quantity  # quantity
+        self.__product = product  
+        self.__quantity = quantity 
 
     def get_line_nbr(self):
         return self.__line_nbr
@@ -22,12 +22,11 @@ class OrderItem:
     def set_quantity(self, new_quantity):
         self.__quantity = new_quantity
 
-    # do not create a setter to line_nbr
     # Extra methods
     def calc_unit_price(self):
         return self.__product.get_product_retail_price()
 
-    def calc_item_tax(self):  # practise on polymorphism
+    def calc_item_tax(self): 
         amount = self.calc_unit_price() * self.get_quantity()
         if isinstance(self.__product, Manual):
             return self.__product.get_tax(amount)
