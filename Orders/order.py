@@ -12,7 +12,6 @@ class Order:
         self.__order_date = datetime.now().date()  # today date
         self.__order_total = 0.0
 
-    # do not make setter to order total , item list
     def get_order_id(self):
         return self.__order_id
 
@@ -29,7 +28,6 @@ class Order:
         return self.__order_date
 
     def get_order_total(self):
-        # loop over the list
         total = 0
         for i in self.__items_list:
             total = total + i.calc_item_total()
@@ -53,26 +51,17 @@ class Order:
             print("item tax = ", item.calc_item_tax())
             print("item total = ", item.calc_item_total())
             print("---------------")
-        """
-        print("------------ item with quantity ------")
-        for i in self.__items_list_quantity:
-            print("product : ", i[0][0].get_product_name())
-            print("quantity = ", i[0][1])
-            print("--------------")
-        """
 
     def add_product_to_cart(self, new_product):
-        # we need to check if the item is in the list or no then we add on it or put in new one
-        if_found = False  # boolean flag
+        if_found = False  
         for i in self.__items_list:
-            if i.get_product().get_product_id() == new_product.get_product_id():  # the product in the list
+            if i.get_product().get_product_id() == new_product.get_product_id(): 
                 current_quantity = i.get_quantity()
                 i.set_quantity(current_quantity + 1)
                 if_found = True
                 break
-        if not if_found:  # the product is not found
-            item_object = OrderItem(new_product, 1)  # create new object named item1 from class OrderItem
-            # fill the list
+        if not if_found: 
+            item_object = OrderItem(new_product, 1)  
             self.__items_list.append(item_object)
 
     def add_product_quantity_to_cart(self, product, quantity):
