@@ -2,7 +2,7 @@ from Products.product import Product
 from Texable.taxable import Taxable
 
 
-class Manual(Product, Taxable):
+class Hardware(Product, Taxable):
     def __init__(self, product_id=None, product_name=None, product_retail_price=None,
                  product_description=None,warranty_period=None):
         self.__warranty_period = warranty_period
