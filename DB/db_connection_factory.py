@@ -1,9 +1,7 @@
-# install packages [ mysql | mysql-connector-pythons ]
 import mysql.connector
 
 
 class DBConnectionFactory:
-    # static variables : username, password, db_name, hostname
     user = "root"
     password = "root"
     host = "localhost"
