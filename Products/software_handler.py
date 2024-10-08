@@ -18,7 +18,6 @@ class SoftwareHandler:
                       software.get_product_description())
             my_cursor = my_connection.cursor()
             my_cursor.execute(sql_statement, values)
-            # ----- Again steps for software tabel --------
             v_last_product_id = my_cursor.lastrowid  # lastrowid to get the last parameter he put it
             sql_statement2 = ("insert into software"
                               " (SOFTWARE_LICENCE, PRODUCT_ID)"
@@ -47,7 +46,6 @@ class SoftwareHandler:
                       software.get_product_description(), software.get_product_id())
             my_cursor = my_connection.cursor()
             my_cursor.execute(sql_statement, values)
-            # ------- software table --------
             sql_statement2 = ("update software "
                               " set software_licence = %s"
                               " where product_id = %s")
